@@ -55,7 +55,7 @@ class main:
                             try:
                                 count = self.soup.select('div[class="box-img"] span.packageQty')[j].text  # 不是每個商品都是單一的 所以 不設try except 的話會有 IndexError
                                 data = {"Category": production[num_production], #取每一個分類的名稱
-                                        'Data': update,
+                                        'Data': str(update),
                                         "Market": "Carefour",
                                         "Price": price,
                                         "Product_name": name + ' ' + str(count),
@@ -65,7 +65,7 @@ class main:
 
                             except IndexError as I:
                                 data = {"Category": production[num_production],
-                                        'Data': update,
+                                        'Data': str(update),
                                         "Market": "Carefour",
                                         "Price": price,
                                         "Product_name": names,
